@@ -340,7 +340,7 @@
                     &nbsp;<asp:ImageButton ID="ImageButton2" runat="server" CausesValidation="False" CommandName="Cancel" ImageUrl="~/Imagens/cancelar.PNG" Text="Cancelar" ToolTip="Cancelar Edição" />
                 </EditItemTemplate>
                 <ItemTemplate>
-                    <asp:ImageButton ID="ImageButton3" runat="server" CausesValidation="False" CommandName="Select" ImageUrl="~/Imagens/dar_baixa.PNG" ToolTip="Sign Off" />
+                    <asp:ImageButton ID="ImageButton3" runat="server" CausesValidation="False" CommandName="Select" ImageUrl="~/Imagens/dar_baixa.PNG" ToolTip="Sign Off" Visible="False" />
                     &nbsp;<asp:ImageButton ID="ImageButton4" runat="server" CausesValidation="False" CommandName="Delete" ImageUrl="~/Imagens/excluir.PNG" ToolTip="Delete Item" />
                 </ItemTemplate>
                 <ItemStyle Width="55px" />

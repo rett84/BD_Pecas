@@ -167,6 +167,7 @@
     <Content Include="Imagens\check_in_partial.png" />
     <Content Include="Imagens\cifrao.png" />
     <Content Include="Imagens\ERP_Icubed.png" />
+    <Content Include="Imagens\excluir_gde.png" />
     <Content Include="Imagens\finalizar_os.png" />
     <Content Include="Imagens\HANEL_LOGO.jpg" />
     <Content Include="Imagens\hanel_offline.jpg" />

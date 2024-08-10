@@ -211,7 +211,7 @@
                     </asp:DropDownList>
                     </span></span></span></span></td>
                 <td class="auto-style23"><span style="font-size: 14pt"><span style="color: #000000; font-family: Arial, Helvetica, sans-serif; font-size: medium; font-weight: normal;"><span style="color: #000000; font-family: Arial, Helvetica, sans-serif; font-size: medium; "><span style="font-family: Arial, Helvetica, sans-serif; font-size: medium; font-weight: normal; color: #000000;">
-                    <asp:ImageButton ID="botao_excluir_colaborador" runat="server" Height="40px" ImageUrl="../Imagens/excluir_gde.png" Visible="False" Width="44px"  OnClientClick="return confirm('Do you want to Delete all records of selected employee?')" ToolTip="Delete all employee records"/>
+                    <asp:ImageButton ID="botao_excluir_colaborador" runat="server" Height="40px" ImageUrl="~/Imagens/excluir_gde.png" Visible="False" Width="44px"  OnClientClick="return confirm('Do you want to Delete all records of selected employee?')" ToolTip="Delete all employee records"/>
                     </span></span></span></span></td>
             </tr>
             <tr>

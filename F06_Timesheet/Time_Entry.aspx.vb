@@ -35,6 +35,7 @@ Public Class Time_Entry
 
             'caixa_employee.Text = ClaimsPrincipal.Current.FindFirst(ClaimTypes.GivenName).Value + " " + ClaimsPrincipal.Current.FindFirst(ClaimTypes.Surname).Value
             caixa_employee.Text = ClaimsPrincipal.Current.FindFirst(ClaimTypes.Email).Value
+            caixa_employee.Text = ClaimsPrincipal.Current.Identity.Name
 
         End If
 

@@ -295,7 +295,7 @@
                     <asp:Button ID="botao_listar_tarefas" runat="server" CausesValidation="False" CssClass="button_search" Height="41px" Text="Retrieve Hours" Width="119px" />
                     </span></span></span></strong></span></span></td>
                 <td class="auto-style46"><span style="color: #6600cc; font-family: Trebuchet MS"><span style="font-size: 14pt"><strong><span class="style2"><span lang="pt-br" style="color: #000000; font-size: medium"><span style="color: #000000; font-family: Arial, Helvetica, sans-serif; font-size: medium; font-weight: normal;">
-                    <asp:Button ID="botao_signoff" runat="server" CausesValidation="False" CssClass="button_generate_request" Height="41px" Text="Signoff Selected" Visible="False" Width="133px" />
+                    <asp:Button ID="botao_signoff" runat="server" CausesValidation="False" CssClass="button_generate_request" Height="41px" Text="Signoff Selected" Width="133px" />
                     </span></span></span></strong></span></span></td>
                 <td class="auto-style43"><span style="color: #6600cc; font-family: Trebuchet MS"><span style="font-size: 14pt"><strong><span class="style2"><span lang="pt-br" style="color: #000000; font-size: medium"><span style="color: #000000; font-family: Arial, Helvetica, sans-serif; font-size: medium; font-weight: normal;">
                     <asp:Button ID="botao_excel" runat="server" CssClass="button_master" Height="41px" Text="Export Hours" Visible="False" />

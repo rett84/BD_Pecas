@@ -579,14 +579,14 @@ Public Class Time_Tracker
         Dim checkbox_header_item As CheckBox = DirectCast(gdv_time_tracker.HeaderRow.FindControl("ck_header_item"), CheckBox)
 
 
-        If checkbox_header_item.Checked = True Then
+        'If checkbox_header_item.Checked = True Then
 
-            botao_signoff.Visible = True
+        '    botao_signoff.Visible = True
 
-        Else
-            botao_signoff.Visible = False
+        'Else
+        '    botao_signoff.Visible = False
 
-        End If
+        'End If
 
         'seleciona checkbox de cada linha ou nao
         For Each row As GridViewRow In gdv_time_tracker.Rows

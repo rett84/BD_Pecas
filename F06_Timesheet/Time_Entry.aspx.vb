@@ -29,8 +29,8 @@ Public Class Time_Entry
 
         If HttpContext.Current.Request.IsLocal Then
 
-            caixa_employee.Text = ClaimsPrincipal.Current.Identity.Name
-
+            ' caixa_employee.Text = ClaimsPrincipal.Current.Identity.Name
+            caixa_employee.Text = "Lucas"
         Else
 
             caixa_employee.Text = ClaimsPrincipal.Current.FindFirst(ClaimTypes.GivenName).Value + " " + ClaimsPrincipal.Current.FindFirst(ClaimTypes.Surname).Value

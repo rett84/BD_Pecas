@@ -878,14 +878,16 @@ Public Class Time_Tracker
         'visibilidade botao excel
         If gdv_time_tracker.Rows.Count <= 0 Then
             botao_excel.Visible = False
+            botao_signoff.Visible = False
         Else
             botao_excel.Visible = True
+            botao_signoff.Visible = True
         End If
     End Sub
 
     Protected Sub botao_excel_Click1(sender As Object, e As EventArgs) Handles botao_excel.Click
 
-        ' cria tabela temporaria 
+        ' cria tabela temporaria
         Dim dt As New DataTable
         dt.Columns.Add("JOB_NO", GetType(String))
         dt.Columns.Add("Date", GetType(String))

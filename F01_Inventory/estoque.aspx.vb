@@ -326,8 +326,8 @@ Partial Public Class estoque
         label_requisitante.Visible = True
         caixa_requisitante.Visible = True
         ' radio_finalidade.Visible = False
-
-        caixa_requisitante.Text = ClaimsPrincipal.Current.FindFirst(ClaimTypes.GivenName).Value + " " + ClaimsPrincipal.Current.FindFirst(ClaimTypes.Surname).Value 'Request.ServerVariables("LOGON_USER") '     USUARIO COM DOMINIO => GetCurrent.Name.
+        Dim email = ClaimsPrincipal.Current.Identity.Name
+        caixa_requisitante.Text = email.Substring(0, email.IndexOf("@")) ' servidor retorna email, extrair usuario 'Request.ServerVariables("LOGON_USER") '     USUARIO COM DOMINIO => GetCurrent.Name.
 
 
 

@@ -786,7 +786,9 @@ Public Class Time_Tracker
 
         ' Create a command object.
         Dim comando As OleDbCommand
-        Dim signed_time_stamp As String = Now.ToString("dd/MMM/yyyy") + " - " + ClaimsPrincipal.Current.Identity.Name 'ClaimsPrincipal.Current.FindFirst(ClaimTypes.GivenName).Value + " " + ClaimsPrincipal.Current.FindFirst(ClaimTypes.Surname).Value
+        Dim email = ClaimsPrincipal.Current.Identity.Name
+        Dim manager = email.Substring(0, email.IndexOf("@")) ' servidor retorna email, extrair usuario
+        Dim signed_time_stamp As String = Now.ToString("dd/MMM/yyyy") + " - " + manager 'ClaimsPrincipal.Current.FindFirst(ClaimTypes.GivenName).Value + " " + ClaimsPrincipal.Current.FindFirst(ClaimTypes.Surname).Value
         Dim i_control As Integer = 0
 
         ' Open the connection.
@@ -807,18 +809,18 @@ Public Class Time_Tracker
 
             'EXECUTA SOMENTE SE CAMPO SIGNED ESTIVER VAZIO, OU SEJA NAO APROVADO AINDA
 
+            ' If signoff.Text = "" And ck_selecao_item.Checked = True And (employee.Text.IndexOf(Request.ServerVariables("LOGON_USER"), StringComparison.OrdinalIgnoreCase) = -1) Then
             If signoff.Text = "" And ck_selecao_item.Checked = True And (employee.Text.IndexOf(Request.ServerVariables("LOGON_USER"), StringComparison.OrdinalIgnoreCase) = -1) Then
+                    'signoff.Text = Now().ToString
 
-                'signoff.Text = Now().ToString
+                    i_control = i_control + 1
 
-                i_control = i_control + 1
+                    ' Execute the command.
+                    comando = New OleDbCommand(SQL, conexao)
+                    comando.Parameters.Add(New OleDbParameter("@signed", signed_time_stamp))
+                    comando.ExecuteNonQuery()
 
-                ' Execute the command.
-                comando = New OleDbCommand(SQL, conexao)
-                comando.Parameters.Add(New OleDbParameter("@signed", signed_time_stamp))
-                comando.ExecuteNonQuery()
-
-            End If
+                End If
 
         Next
 

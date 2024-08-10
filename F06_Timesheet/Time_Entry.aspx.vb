@@ -34,8 +34,9 @@ Public Class Time_Entry
         Else
 
             'caixa_employee.Text = ClaimsPrincipal.Current.FindFirst(ClaimTypes.GivenName).Value + " " + ClaimsPrincipal.Current.FindFirst(ClaimTypes.Surname).Value
-            '  caixa_employee.Text = ClaimsPrincipal.Current.FindFirst(ClaimTypes.Email).Value
-            caixa_employee.Text = "Lucas" 'ClaimsPrincipal.Current.Identity.Name
+            Dim email = ClaimsPrincipal.Current.Identity.Name
+
+            caixa_employee.Text = email.Substring(0, email.IndexOf("@")) ' servidor retorna email, extrair usuario
 
         End If
 

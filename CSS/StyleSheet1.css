@@ -1,0 +1,28 @@
+﻿body {
+}
+h1 {
+    color: blue;
+    font-family: Arial, sans-serif;
+    font-size: 200%;
+    margin-left: 480px;
+}
+
+
+h2 {
+    color: blue;
+    font-family: Arial, sans-serif;
+    font-size: 200%;
+}
+
+h3 {
+    color: black;
+    font-family: Arial, sans-serif;
+    font-size: 80%;
+}
+
+p {
+    color: blue;
+    font-family: courier;
+    font-size: 160%;
+}
+

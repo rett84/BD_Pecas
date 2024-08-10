@@ -1,0 +1,647 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C625FFD8-153A-437C-A674-6C780044869A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>BD_Pecas</RootNamespace>
+    <AssemblyName>BD_Pecas</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkProfile />
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>BD_Pecas.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="ConnectionString-Deployment" Order="1">
+          <Destination Path="" />
+          <Object Type="dbFullSql">
+            <PreSource Path="Provider=Microsoft.ACE.OLEDB.12.0%3bData Source=|DataDirectory|\BD11.mdb" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\ConnectionString-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="MyConnectionString-Deployment" Order="3">
+          <Destination Path="" />
+          <Object Type="dbFullSql">
+            <PreSource Path="Provider=Microsoft.Jet.OLEDB.4.0%3bData Source=|DataDirectory|\BD11.mdb" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\MyConnectionString-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+    <IncludeIisSettings>true</IncludeIisSettings>
+    <FilesToIncludeForPublish>AllFilesInProjectFolder</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>BD_Pecas.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FiftyOne.Foundation, Version=3.2.9.1, Culture=neutral, PublicKeyToken=e0b3a8da0bbce49c, processorArchitecture=MSIL">
+      <HintPath>packages\51Degrees.mobi.3.2.9.1\lib\NET40\FiftyOne.Foundation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NDde">
+      <HintPath>packages\NDDE\Binary\NDde.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=110.2.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>packages\RestSharp.110.2.0\lib\net471\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\WINDOWS\assembly\GAC_MSIL\System.Web.Entity\3.5.0.0__b77a5c561934e089\System.Web.Entity.dll</HintPath>
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CSS\StyleSheet1.css" />
+    <Content Include="F00_Index\WebForm1.aspx" />
+    <Content Include="F05_Receiving\acompanhamento_pc.aspx" />
+    <Content Include="App_Data\BD11.mdb">
+    </Content>
+    <Content Include="F07_Lean_Lift\leli_req.aspx" />
+    <Content Include="F07_Lean_Lift\record_item_leli.aspx" />
+    <Content Include="F07_Lean_Lift\allocated_leli.aspx" />
+    <Content Include="F07_Lean_Lift\leli_items_req.aspx" />
+    <Content Include="F08_Invoice\Invoice.aspx" />
+    <Content Include="F08_Invoice\invoice_print.aspx" />
+    <Content Include="F08_Invoice\invoice_update.aspx" />
+    <Content Include="F08_Invoice\invoice_gen.aspx" />
+    <Content Include="F1000_Not Active\adm_despesas.aspx" />
+    <Content Include="F100_Popups\excel.aspx" />
+    <Content Include="F04_Generate PO-Quotes\gera_req.aspx" />
+    <Content Include="F1000_Not Active\gerencia_notas.aspx" />
+    <Content Include="F100_Popups\popup_calendario.aspx" />
+    <Content Include="Imagens\atomo_systems_logo.png" />
+    <Content Include="Imagens\atomo_systems_logo_header.png" />
+    <Content Include="Imagens\buscar_os.png" />
+    <Content Include="Imagens\check_in_partial.png" />
+    <Content Include="Imagens\cifrao.png" />
+    <Content Include="Imagens\ERP_Icubed.png" />
+    <Content Include="Imagens\finalizar_os.png" />
+    <Content Include="Imagens\HANEL_LOGO.jpg" />
+    <Content Include="Imagens\hanel_offline.jpg" />
+    <Content Include="Imagens\hanel_online.jpg" />
+    <Content Include="Imagens\IC LOGO_Color_PNG.png" />
+    <Content Include="Imagens\index_logo.png" />
+    <Content Include="Imagens\index_logo1.jpg" />
+    <Content Include="Imagens\labor_codes.png" />
+    <Content Include="Imagens\load_button.png" />
+    <Content Include="Imagens\manual_sistema.jpg" />
+    <Content Include="Imagens\pagamento.png" />
+    <Content Include="F03_Job Management\importa_job.aspx" />
+    <Content Include="F03_Job Management\Job_Entry.aspx" />
+    <Content Include="F1000_Not Active\lanc_despesas.aspx" />
+    <Content Include="F01_Inventory\estoque.aspx" />
+    <Content Include="F1000_Not Active\gerencia_os.aspx" />
+    <Content Include="Imagens\atualizar.PNG" />
+    <Content Include="Imagens\cadastrar.png" />
+    <Content Include="Imagens\calendario.PNG" />
+    <Content Include="Imagens\cancelar.PNG" />
+    <Content Include="Imagens\cancelar_edicao.png" />
+    <Content Include="Imagens\cancelar_item.PNG" />
+    <Content Include="Imagens\dar_baixa.PNG" />
+    <Content Include="Imagens\editar.PNG" />
+    <Content Include="Imagens\editar_dados.jpg" />
+    <Content Include="Imagens\entrada_item.PNG" />
+    <Content Include="Imagens\excluir.PNG" />
+    <Content Include="Imagens\exclui_os.png" />
+    <Content Include="Imagens\gravar.png" />
+    <Content Include="Imagens\infografico.jpg" />
+    <Content Include="Imagens\ir.jpg" />
+    <Content Include="Imagens\recuperar.png" />
+    <Content Include="Imagens\relatorio.PNG" />
+    <Content Include="Imagens\salvar_req.PNG" />
+    <Content Include="Imagens\selecionar.PNG" />
+    <Content Include="Imagens\validar.png" />
+    <Content Include="Imagens\versao_impressao.jpg" />
+    <Content Include="F01_Inventory\insere_item_estoque.aspx" />
+    <Content Include="F04_Generate PO-Quotes\form_impressao_rc.aspx" />
+    <Content Include="F03_Job Management\detalhes_os.aspx" />
+    <Content Include="F04_Generate PO-Quotes\form_impressao_ro.aspx" />
+    <Content Include="Imagens\end_ak.png" />
+    <Content Include="Imagens\end_isa.png" />
+    <Content Include="Imagens\impressora.jpg" />
+    <Content Include="Imagens\peças.jpg" />
+    <Content Include="F01_Inventory\importa_pecas.aspx" />
+    <Content Include="index.aspx" />
+    <Content Include="F03_Job Management\insere_cliente.aspx" />
+    <Content Include="F03_Job Management\insere_cliente_final.aspx" />
+    <Content Include="F01_Inventory\insere_fornecedor.aspx" />
+    <Content Include="F01_Inventory\inventario.aspx" />
+    <Content Include="F07_Lean_Lift\leanliftdb.aspx" />
+    <Content Include="Mobile\Default.aspx" />
+    <Content Include="Mobile\Default.aspx.cs" />
+    <Content Include="F1000_Not Active\popup_pagamento_nota.aspx" />
+    <Content Include="F1000_Not Active\relatorio_despesas.aspx" />
+    <Content Include="F06_Timesheet\report_time_tracker.aspx" />
+    <Content Include="F02_Allocated\reservados.aspx" />
+    <Content Include="F04_Generate PO-Quotes\selecao_itens_req.aspx" />
+    <Content Include="F06_Timesheet\Time_Entry.aspx" />
+    <Content Include="F06_Timesheet\Time_Tracker.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="F00_Index\Site1.Master.designer.vb">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="F00_Index\Site1.Master.vb">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F00_Index\WebForm1.aspx.designer.vb">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F00_Index\WebForm1.aspx.vb">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="F05_Receiving\acompanhamento_pc.aspx.designer.vb">
+      <DependentUpon>acompanhamento_pc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F05_Receiving\acompanhamento_pc.aspx.vb">
+      <DependentUpon>acompanhamento_pc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F07_Lean_Lift\leli_req.aspx.designer.vb">
+      <DependentUpon>leli_req.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F07_Lean_Lift\leli_req.aspx.vb">
+      <DependentUpon>leli_req.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F07_Lean_Lift\record_item_leli.aspx.designer.vb">
+      <DependentUpon>record_item_leli.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F07_Lean_Lift\record_item_leli.aspx.vb">
+      <DependentUpon>record_item_leli.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F07_Lean_Lift\allocated_leli.aspx.designer.vb">
+      <DependentUpon>allocated_leli.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F07_Lean_Lift\allocated_leli.aspx.vb">
+      <DependentUpon>allocated_leli.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F07_Lean_Lift\leli_items_req.aspx.designer.vb">
+      <DependentUpon>leli_items_req.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F07_Lean_Lift\leli_items_req.aspx.vb">
+      <DependentUpon>leli_items_req.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F08_Invoice\Invoice.aspx.designer.vb">
+      <DependentUpon>Invoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F08_Invoice\Invoice.aspx.vb">
+      <DependentUpon>Invoice.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="F08_Invoice\invoice_print.aspx.designer.vb">
+      <DependentUpon>invoice_print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F08_Invoice\invoice_print.aspx.vb">
+      <DependentUpon>invoice_print.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="F08_Invoice\invoice_update.aspx.designer.vb">
+      <DependentUpon>invoice_update.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F08_Invoice\invoice_update.aspx.vb">
+      <DependentUpon>invoice_update.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="F08_Invoice\invoice_gen.aspx.designer.vb">
+      <DependentUpon>invoice_gen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F08_Invoice\invoice_gen.aspx.vb">
+      <DependentUpon>invoice_gen.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="F1000_Not Active\adm_despesas.aspx.designer.vb">
+      <DependentUpon>adm_despesas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F1000_Not Active\adm_despesas.aspx.vb">
+      <DependentUpon>adm_despesas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F100_Popups\excel.aspx.designer.vb">
+      <DependentUpon>excel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F100_Popups\excel.aspx.vb">
+      <DependentUpon>excel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F04_Generate PO-Quotes\gera_req.aspx.designer.vb">
+      <DependentUpon>gera_req.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F04_Generate PO-Quotes\gera_req.aspx.vb">
+      <DependentUpon>gera_req.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F1000_Not Active\gerencia_notas.aspx.designer.vb">
+      <DependentUpon>gerencia_notas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F1000_Not Active\gerencia_notas.aspx.vb">
+      <DependentUpon>gerencia_notas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F03_Job Management\importa_job.aspx.designer.vb">
+      <DependentUpon>importa_job.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F03_Job Management\importa_job.aspx.vb">
+      <DependentUpon>importa_job.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F03_Job Management\Job_Entry.aspx.designer.vb">
+      <DependentUpon>Job_Entry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F03_Job Management\Job_Entry.aspx.vb">
+      <DependentUpon>Job_Entry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F1000_Not Active\lanc_despesas.aspx.designer.vb">
+      <DependentUpon>lanc_despesas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F1000_Not Active\lanc_despesas.aspx.vb">
+      <DependentUpon>lanc_despesas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F01_Inventory\estoque.aspx.designer.vb">
+      <DependentUpon>estoque.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F01_Inventory\estoque.aspx.vb">
+      <DependentUpon>estoque.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F1000_Not Active\gerencia_os.aspx.designer.vb">
+      <DependentUpon>gerencia_os.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F1000_Not Active\gerencia_os.aspx.vb">
+      <DependentUpon>gerencia_os.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F01_Inventory\insere_item_estoque.aspx.designer.vb">
+      <DependentUpon>insere_item_estoque.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F01_Inventory\insere_item_estoque.aspx.vb">
+      <DependentUpon>insere_item_estoque.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F04_Generate PO-Quotes\form_impressao_rc.aspx.designer.vb">
+      <DependentUpon>form_impressao_rc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F04_Generate PO-Quotes\form_impressao_rc.aspx.vb">
+      <DependentUpon>form_impressao_rc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F03_Job Management\detalhes_os.aspx.designer.vb">
+      <DependentUpon>detalhes_os.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F03_Job Management\detalhes_os.aspx.vb">
+      <DependentUpon>detalhes_os.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F04_Generate PO-Quotes\form_impressao_ro.aspx.designer.vb">
+      <DependentUpon>form_impressao_ro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F04_Generate PO-Quotes\form_impressao_ro.aspx.vb">
+      <DependentUpon>form_impressao_ro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F01_Inventory\importa_pecas.aspx.designer.vb">
+      <DependentUpon>importa_pecas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F01_Inventory\importa_pecas.aspx.vb">
+      <DependentUpon>importa_pecas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F100_Popups\popup_calendario.aspx.designer.vb">
+      <DependentUpon>popup_calendario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F100_Popups\popup_calendario.aspx.vb">
+      <DependentUpon>popup_calendario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.vb">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.vb">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F03_Job Management\insere_cliente.aspx.designer.vb">
+      <DependentUpon>insere_cliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F03_Job Management\insere_cliente.aspx.vb">
+      <DependentUpon>insere_cliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F03_Job Management\insere_cliente_final.aspx.designer.vb">
+      <DependentUpon>insere_cliente_final.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F03_Job Management\insere_cliente_final.aspx.vb">
+      <DependentUpon>insere_cliente_final.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F01_Inventory\insere_fornecedor.aspx.designer.vb">
+      <DependentUpon>insere_fornecedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F01_Inventory\insere_fornecedor.aspx.vb">
+      <DependentUpon>insere_fornecedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F01_Inventory\inventario.aspx.designer.vb">
+      <DependentUpon>inventario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F01_Inventory\inventario.aspx.vb">
+      <DependentUpon>inventario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F07_Lean_Lift\leanliftdb.aspx.designer.vb">
+      <DependentUpon>leanliftdb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F07_Lean_Lift\leanliftdb.aspx.vb">
+      <DependentUpon>leanliftdb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="F1000_Not Active\popup_pagamento_nota.aspx.designer.vb">
+      <DependentUpon>popup_pagamento_nota.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F1000_Not Active\popup_pagamento_nota.aspx.vb">
+      <DependentUpon>popup_pagamento_nota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F1000_Not Active\relatorio_despesas.aspx.designer.vb">
+      <DependentUpon>relatorio_despesas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F1000_Not Active\relatorio_despesas.aspx.vb">
+      <DependentUpon>relatorio_despesas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F06_Timesheet\report_time_tracker.aspx.designer.vb">
+      <DependentUpon>report_time_tracker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F06_Timesheet\report_time_tracker.aspx.vb">
+      <DependentUpon>report_time_tracker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F02_Allocated\reservados.aspx.designer.vb">
+      <DependentUpon>reservados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F02_Allocated\reservados.aspx.vb">
+      <DependentUpon>reservados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F04_Generate PO-Quotes\selecao_itens_req.aspx.designer.vb">
+      <DependentUpon>selecao_itens_req.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F04_Generate PO-Quotes\selecao_itens_req.aspx.vb">
+      <DependentUpon>selecao_itens_req.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F00_Index\Pagina.Master.designer.vb">
+      <DependentUpon>Pagina.Master</DependentUpon>
+    </Compile>
+    <Compile Include="F00_Index\Pagina.Master.vb">
+      <DependentUpon>Pagina.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F06_Timesheet\Time_Entry.aspx.designer.vb">
+      <DependentUpon>Time_Entry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F06_Timesheet\Time_Entry.aspx.vb">
+      <DependentUpon>Time_Entry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F06_Timesheet\Time_Tracker.aspx.designer.vb">
+      <DependentUpon>Time_Tracker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F06_Timesheet\Time_Tracker.aspx.vb">
+      <DependentUpon>Time_Tracker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\51Degrees.dat" />
+    <Content Include="51Degrees.config" />
+    <Content Include="F00_Index\Site1.Master" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\PublishProfiles\lrerp - Web Deploy.pubxml" />
+    <None Include="My Project\PublishProfiles\lrerp - Web Deploy1.pubxml" />
+    <None Include="My Project\PublishProfiles\lrerp - Web Deploy2.pubxml" />
+    <None Include="My Project\PublishProfiles\RDROBOTICS - Web Deploy.pubxml" />
+    <None Include="My Project\PublishProfiles\RDROBOTICS - Web Deploy1.pubxml" />
+    <None Include="My Project\PublishProfiles\retterp - Web Deploy.pubxml" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="F00_Index\Pagina.Master" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>BD_Pecas.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>BD_Pecas.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>BD_Pecas.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>BD_Pecas.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56294</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3910/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

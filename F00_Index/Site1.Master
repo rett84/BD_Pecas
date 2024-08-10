@@ -1,0 +1,267 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site1.master.vb" Inherits="BD_Pecas.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style3 {
+            width: 42%;
+            height: 51px;
+        }
+
+        .bottom_div { 
+         position: relative;
+         bottom: 0px; 
+         background-color: lightslategray;
+         height: 120px;
+         width: 100%;
+         margin-left: 0px;
+         } 
+
+        .div0 {
+         background-color: lightslategray;
+         height: 75px;
+         
+         margin-left: 0px;
+         width: 100%; 
+      
+        }
+
+         .div-middle {
+         background-color: white;
+        
+         
+         margin-left: 5%;
+         width: 100%;
+           
+        }
+
+        .button_master {
+          display: inline-block;
+          border-radius: 4px;
+          background-color: green;
+          border: none;
+          color: #FFFFFF;
+          text-align: center;
+          font-size: 15px;
+          padding: 0px;
+          width: 100px;
+          transition: all 0.5s;
+          cursor: pointer;
+          margin: 0px;
+        }
+
+        .auto-style5 {
+            height: 23px;
+            width: 492px;
+        }
+
+        .auto-style6 {
+            height: 23px;
+            width: 5px;
+        }
+        .auto-style7 {
+            height: 23px;
+            width: 127px;
+        }
+        .auto-style8 {
+            height: 23px;
+            width: 91px;
+        }
+        .auto-style12 {
+            height: 23px;
+            width: 71px;
+            margin-left: 10%;
+        }
+        .auto-style14 {
+            height: 23px;
+            width: 75px;
+        }
+        
+        
+
+        .auto-style17 {
+            height: 23px;
+            width: 238px;
+        }
+
+        
+
+        .auto-style18 {
+            height: 23px;
+            width: 111px;
+        }
+        .auto-style19 {
+            height: 23px;
+            width: 23px;
+            margin-left: 10%;
+        }
+
+        /* Style The Dropdown Button */
+        .dropbtn {
+          background-color:black;
+          color: white;
+          padding: 16px;
+          font-size: 16px;
+          font-weight:600;
+          border: none;
+          cursor: pointer;
+         
+        }
+
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+          font-family:Arial, Helvetica, sans-serif;
+          font-weight: bold;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {background-color: #f1f1f1}
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        .dropdown:hover .dropbtn {
+          background-color: darkgray;
+        }
+
+        
+
+      
+        
+
+        </style>
+</head>
+<body style="width: 100%; height: 231px">
+    <form id="form1" runat="server">
+        <div class="div0">
+            &nbsp;<table class="auto-style3">
+                <tr>
+                    <td class="auto-style5">
+
+                        <div class="dropdown">
+                         <button class="dropbtn">Menu</button>
+                      <div class="dropdown-content">
+                        <a href="../F01_Inventory/estoque.aspx">Electrical Inventory</a>
+                        <a href="../F02_Allocated/reservados.aspx">Electrical Allocated to Projects</a>
+                        <a href="../F03_Job Management/Job_Entry.aspx">Job Management</a>
+                        <a href="../F04_Generate PO-Quotes/gera_req.aspx">Quotes/PO Request</a>
+                        <a href="../F05_Receiving/acompanhamento_pc.aspx">Receiving/PO Overview</a>
+                        <a href="../F06_Timesheet/Time_Entry.aspx">Time Entry</a>
+                        <a href="../F06_Timesheet/Time_Tracker.aspx">Time Tracker</a>    
+                        <a href="../F08_Invoice/invoice.aspx">Invoices</a>      
+                      </div>
+                    </div>
+                      </td>
+                    <td class="auto-style12">
+    
+                        &nbsp;</td>
+                    <td class="auto-style19">
+    
+                        &nbsp;</td>
+                    <td class="auto-style17">
+    
+       
+                        &nbsp;</td>
+                    <td class="auto-style14">
+    
+       
+                        &nbsp;</td>
+                    <td class="auto-style18">
+    
+       
+                     
+                      </td>
+                    <td class="auto-style8">
+    
+       
+                        
+                      </td>
+                   
+    
+       
+                       
+
+                    </td>
+                    <td class="auto-style7">
+    
+       
+                        <span style="color: #6600cc; font-family: Trebuchet MS"><strong><span style="font-size: 14pt">
+                        <span lang="pt-br" style="color: #000000; font-size: medium">
+                        <span style="font-family: Trebuchet MS"><span style="color: #000000; font-size: medium" class="div0"><span style="color: #000000; font-family: Arial, Helvetica, sans-serif; font-size: medium; font-weight: normal;">
+         <asp:DropDownList ID="sistema" Runat="server" 
+         Width="173px" Height="31px" BackColor="#666666" Font-Bold="True" Font-Names="Arial" Font-Size="Medium" ForeColor="White" Visible="False" >
+        <asp:ListItem Value="1">Electrical Inventory</asp:ListItem>
+        <asp:ListItem Value="2">Electrical Allocated to Projects</asp:ListItem>
+        <asp:ListItem Value="3">Jobs Management</asp:ListItem>
+        <asp:ListItem Value="4">Quotes/PO Requests</asp:ListItem>
+        <asp:ListItem Value="5">Receiving/PO Overview</asp:ListItem>
+        <asp:ListItem Value="6" Enabled="False">Lanç. Despesas</asp:ListItem>
+            <asp:ListItem Value="7">Time Entry</asp:ListItem>
+            <asp:ListItem Value="8">Time Tracker</asp:ListItem>
+            <asp:ListItem Value="9">Lean Lift Inventory</asp:ListItem>
+            <asp:ListItem Value="10">Lean Lift Allocated</asp:ListItem>
+            <asp:ListItem Value="11">Lean Lift Request</asp:ListItem>
+       
+    </asp:DropDownList>
+
+        
+        </span> 
+        </span>
+            </span></span></span>
+        </strong>
+                    </td>
+                    <td class="auto-style6">
+    
+       
+        <span lang="pt-br" style="color: #000000; font-size: medium">
+                        <span style="font-family: Trebuchet MS" class="title-font"><asp:Button ID="botao_ir" class="button_master" style="vertical-align:middle" runat="server" Text="GO" Height="36px" Width="95px" Visible="False" />
+                 </span>
+                        </span>
+           
+     
+                    </td>
+                </tr>
+            </table>
+           
+        </div>
+
+          
+        <div class="div-middle">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+             
+        </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+   
+   
+    </body>
+</html>

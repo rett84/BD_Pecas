@@ -1,0 +1,11 @@
+2017-07-06T20:55:23.6352440Z - 6148 - Warn - Exception cleaning temporary files
+2017-07-06T20:55:23.6367443Z - 6148 - Warn - 
+2017-07-06T20:55:23.6372444Z - 6148 - Warn - Access to the path '51Degrees.dat.064ad7c2-b14d-402c-b7b9-8b3227b4510d.tmp' is denied.
+2017-07-06T20:55:23.6377445Z - 6148 - Warn -    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileInfo.Delete()
+   at FiftyOne.Foundation.Mobile.Detection.WebProvider.CleanTemporaryFiles()
+2024-08-10T17:34:21.3515560Z - 31884 - Warn - Detection module could not automatically be registered. Some detection and redirection services will not be available unless the HttpModule is included explicitly in the web.config file or Microsoft.Web.Infrastructure is installed.
+2024-08-10T17:41:52.8553648Z - 16232 - Warn - Detection module could not automatically be registered. Some detection and redirection services will not be available unless the HttpModule is included explicitly in the web.config file or Microsoft.Web.Infrastructure is installed.
+2024-08-10T17:49:26.1007273Z - 16232 - Warn - Detection module could not automatically be registered. Some detection and redirection services will not be available unless the HttpModule is included explicitly in the web.config file or Microsoft.Web.Infrastructure is installed.
+2024-08-10T17:51:20.8237718Z - 16232 - Warn - Detection module could not automatically be registered. Some detection and redirection services will not be available unless the HttpModule is included explicitly in the web.config file or Microsoft.Web.Infrastructure is installed.
+2024-08-10T17:51:44.4253203Z - 16232 - Warn - Detection module could not automatically be registered. Some detection and redirection services will not be available unless the HttpModule is included explicitly in the web.config file or Microsoft.Web.Infrastructure is installed.

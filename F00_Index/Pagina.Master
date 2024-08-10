@@ -1,0 +1,126 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Pagina.Master.vb" Inherits="BD_Pecas.Master" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="StyleSheet1" href="~/CSS/StyleSheet1.css" type="text/css"/>
+    <style type="text/css">
+
+        .newStyle8 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .button_master {
+          display: inline-block;
+          border-radius: 4px;
+          background-color: green;
+          border: none;
+          color: #FFFFFF;
+          text-align: center;
+          font-size: 15px;
+          padding: 0px;
+          width: 100px;
+          transition: all 0.5s;
+          cursor: pointer;
+          margin: 0px;
+        }
+
+        .button_master span {
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+          transition: 0.5s;
+        }
+
+        .button_master span:after {
+          content: '\00bb';
+          position: absolute;
+          opacity: 0;
+          top: 0;
+          right: -20px;
+          transition: 0.5s;
+        }
+
+        .button_master:hover span {
+          padding-right: 25px;
+        }
+
+        .button_master:hover span:after {
+          opacity: 1;
+          right: 0;
+        }
+
+        .div0 {
+         background-color: lightslategray;
+         height: 100px;
+         width: 1500px;
+        }
+
+        
+        
+  
+
+
+        
+        
+  
+
+        </style>
+</head>
+<body style="width: 1584px">
+    <form id="form1" runat="server">
+    <div class="div0">
+    
+        <span style="color: #6600cc; font-family: Trebuchet MS"><strong><span style="font-size: 14pt">
+        <span lang="pt-br" style="color: #000000; font-size: medium">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-family: Trebuchet MS"><span style="color: #000000; font-size: medium" class="div0"><span style="color: #000000; font-family: Arial, Helvetica, sans-serif; font-size: medium; font-weight: normal;"><asp:DropDownList ID="sistema" Runat="server" 
+         Width="173px" Height="31px" BackColor="#666666" Font-Bold="True" Font-Names="Arial" Font-Size="Medium" ForeColor="White">
+        <asp:ListItem Value="1">Electrical Inventory</asp:ListItem>
+        <asp:ListItem Value="2">Electrical Allocated to Projects</asp:ListItem>
+        <asp:ListItem Value="3">Jobs Management</asp:ListItem>
+        <asp:ListItem Value="4">Quotes/PO Requests</asp:ListItem>
+        <asp:ListItem Value="5">Receiving/PO Overview</asp:ListItem>
+        <asp:ListItem Value="6" Enabled="False">Lanç. Despesas</asp:ListItem>
+            <asp:ListItem Value="7">Time Entry</asp:ListItem>
+            <asp:ListItem Value="8">Time Tracker</asp:ListItem>
+            <asp:ListItem Value="9">Lean Lift Inventory</asp:ListItem>
+            <asp:ListItem Value="10">Lean Lift Allocated</asp:ListItem>
+            <asp:ListItem Value="11">Lean Lift Request</asp:ListItem>
+    </asp:DropDownList>
+        </span> 
+        </span>
+            </span>&nbsp;<span style="font-family: Trebuchet MS"><span style="font-family: Trebuchet MS" class="title-font">&nbsp;&nbsp;<asp:Button ID="botao_ir" class="button_master" style="vertical-align:middle" runat="server" Text="GO" Height="31px" Width="100px" />
+                 </span>
+        <span style="color: #000000; font-size: medium" class="div0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            <table style="width:100%;">
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+        </table>
+            </span></span></span>
+        </strong>
+    </div>
+
+     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+    </asp:ContentPlaceHolder>
+
+    </form>
+    </body>
+</html>
